@@ -1,0 +1,8 @@
+{
+    "DelFog": "+CVars=ShowFlag.DynamicShadows=1\n",
+    "DelFoliage": "+CVars=foliage.UseOcclusionType=0\n",
+    "DelLight": "+Cvars=ShowFlag.LightComplexity=0\n",
+    "DelMaterials": "+Cvars=ShowFlag.Materials=0\n",
+    "DelParticles": "+Cvars=FX.MaxCPUParticlesPerEmitter=0\n",
+    "DelEverything": "+Cvars=ShowFlag.GameplayDebug=0\n"
+}
