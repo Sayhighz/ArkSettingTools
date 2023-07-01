@@ -13,11 +13,21 @@ app.title('ARKSettingTools')
 app.geometry('300x70')
 app.resizable(width=False, height=False)
 app.iconbitmap('favicon.ico')
+
 logo_art = '''
 ██ ███ █╬█ █╬█ █ ███ █╬█
 █▄ █▄█ █▄█ █▄█ █ █╬▄ █▄█
 ▄█ █╬█ ╬█╬ █╬█ █ █▄█ █╬█
 '''
+
+
+# show logo
+def showLogo():
+        
+    global logo
+    logo = tk.Label(app, text=logo_art)
+    logo.place(x=5,y=1)
+
 
 # delete widget
 def clear_widget():
@@ -92,9 +102,10 @@ def getfilepath():
         lablePath.set(file_path)
         with open('file/gamelocation.txt', "w")as file:
             file.write(lablePath.get())
-        showMenu()
-
         # show menu
+        
+        showMenu()
+        showLogo()
         browsePathBtn.destroy()
         app.geometry("250x120")
     else:
@@ -107,7 +118,9 @@ def getData():
     if os.path.exists(checkDirectory):
         browsePathBtn.destroy()
         showMenu()
+        showLogo()
         app.geometry("250x120")
+
 
 
 # function select variable
@@ -437,8 +450,6 @@ mapRainbow = tk.IntVar()
 topWater = tk.IntVar()
 defaultFile = tk.IntVar()
 
-logo = tk.Label(app, text=logo_art)
-logo.place(x=5,y=1)
 
 Label(app, text="change to ur path", textvariable=lablePath).pack(side=tk.BOTTOM)
 lablePath.set(location)
